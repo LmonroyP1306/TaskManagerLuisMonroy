@@ -1,0 +1,62 @@
+﻿@model TaskManager.Models.Tarea
+
+<div class="modal-header bg-primary text-white">
+    <h5 class="modal-title"><i class="bi bi-pencil-square me-2"></i>Editar Tarea</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    @using (Html.BeginForm("Edit", "Tareas", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.TareaId)
+        @Html.HiddenFor(model => model.UsuarioId)
+        @Html.HiddenFor(model => model.FechaAsignacion)
+
+        <div class="mb-4">
+            @Html.LabelFor(m => m.Titulo, new { @class = "form-label" })
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-card-heading"></i></span>
+                @Html.TextBoxFor(m => m.Titulo, new { @class = "form-control", placeholder = "Ingrese el título de la tarea" })
+            </div>
+            @Html.ValidationMessageFor(m => m.Titulo, "", new { @class = "text-danger small" })
+        </div>
+
+        <div class="mb-4">
+            @Html.LabelFor(m => m.Descripcion, new { @class = "form-label" })
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-text-paragraph"></i></span>
+                @Html.TextAreaFor(m => m.Descripcion, new { @class = "form-control", rows = "3", placeholder = "Agregue una descripción detallada" })
+            </div>
+        </div>
+
+        <div class="mb-4">
+            @Html.LabelFor(m => m.FechaVencimiento, new { @class = "form-label" })
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-calendar-date"></i></span>
+                @Html.TextBoxFor(m => m.FechaVencimiento, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+            </div>
+            @Html.ValidationMessageFor(m => m.FechaVencimiento, "", new { @class = "text-danger small" })
+        </div>
+
+        <div class="mb-4">
+            @Html.LabelFor(m => m.Estado, new { @class = "form-label" })
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-list-check"></i></span>
+                @Html.DropDownListFor(m => m.Estado,
+                TaskManager.Helpers.EnumHelper.ToSelectListWithDisplayNames<TaskManager.Models.EstadoTarea>(),
+                "-- Seleccione --",
+                new { @class = "form-select" })
+            </div>
+            @Html.ValidationMessageFor(m => m.Estado, "", new { @class = "text-danger small" })
+        </div>
+
+        <div class="modal-footer bg-light">
+            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">
+                <i class="bi bi-x-circle me-2"></i>Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary rounded-pill px-4">
+                <i class="bi bi-save me-2"></i>Guardar Cambios
+            </button>
+        </div>
+    }
+</div>

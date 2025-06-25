@@ -1,0 +1,199 @@
+﻿/* Estilos para el avatar circular */
+.avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.avatar-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sortable-chosen {
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .kanban-column {
+        margin-bottom: 20px;
+        min-height: auto;
+    }
+
+    .tasks-list {
+        min-height: auto;
+    }
+}
+
+.kanban-board {
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.kanban-column {
+    min-height: 70vh;
+    border: 1px solid #dee2e6;
+    margin: 0 5px;
+}
+
+.column-header {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.tasks-list {
+    min-height: 60vh;
+}
+
+.task-card {
+    margin-bottom: 15px;
+    cursor: grab;
+    transition: all 0.3s ease;
+}
+
+    .task-card:hover {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transform: translateY(-2px);
+    }
+
+.due-date {
+    font-size: 0.85rem;
+}
+
+.urgent {
+    border-left: 4px solid #dc3545;
+}
+
+.normal {
+    border-left: 4px solid #ffc107;
+}
+
+/* Estilos generales para modals */
+.modal-content {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 1.2rem 1.5rem;
+}
+
+.modal-title {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.25rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #e9ecef;
+    padding: 1rem 1.5rem;
+    background-color: #f8f9fa;
+}
+
+.btn-close {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    margin: -0.5rem -0.5rem -0.5rem auto;
+}
+
+/* Estilos para formularios en modals */
+.modal-body .form-label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.modal-body .form-control,
+.modal-body .form-select {
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    transition: all 0.3s;
+}
+
+    .modal-body .form-control:focus,
+    .modal-body .form-select:focus {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+.modal-body .invalid-feedback {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* Animaciones */
+.modal.fade .modal-dialog {
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-out, opacity 0.3s ease;
+}
+
+.modal.show .modal-dialog {
+    transform: translateY(0);
+}
+
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: 0.5rem auto;
+    }
+
+    .modal-content {
+        border-radius: 0;
+    }
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 1rem;
+    }
+}
+
+/* Estilos para los input groups con iconos */
+.input-group-text {
+    background-color: #f8f9fa;
+    border-right: none;
+}
+
+.form-control, .form-select {
+    border-left: none;
+}
+
+/* Estilos para las cards en el modal de eliminación */
+.alert-danger {
+    border-left: 4px solid #dc3545;
+}
+
+.list-group-item {
+    background-color: transparent;
+    padding: 0.75rem 0;
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para botones con iconos */
+.btn i {
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+/* Efecto hover para los botones */
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+}
+
+/* Transiciones suaves */
+.input-group-text, .form-control, .btn {
+    transition: all 0.2s ease;
+}

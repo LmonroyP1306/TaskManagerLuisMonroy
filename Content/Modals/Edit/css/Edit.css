@@ -1,0 +1,13 @@
+﻿/* Edit Modal */
+#editModal .modal-header {
+    background-color: #17a2b8;
+    color: white;
+}
+
+#editModal .modal-title {
+    color: white;
+}
+
+#editModal .btn-close {
+    filter: invert(1);
+}

@@ -1,0 +1,62 @@
+﻿@model TaskManager.Models.Tarea
+
+@{
+    var cardClass = "";
+    var priorityIcon = "";
+
+    if (Model.FechaVencimiento < DateTime.Now.AddDays(2) && Model.Estado != "Completa")
+    {
+        cardClass = "urgent";
+        priorityIcon = "<i class='bi bi-exclamation-triangle-fill text-danger me-1' data-bs-toggle='tooltip' title='¡Urgente!'></i>";
+    }
+    else if (Model.FechaVencimiento < DateTime.Now.AddDays(5) && Model.Estado != "Completa")
+    {
+        cardClass = "normal";
+        priorityIcon = "<i class='bi bi-exclamation-circle-fill text-warning me-1' data-bs-toggle='tooltip' title='Prioridad media'></i>";
+    }
+}
+
+<div class="card task-card @cardClass" data-task-id="@Model.TareaId">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+            <h6 class="card-title mb-0">
+                @Html.Raw(priorityIcon)
+                @Model.Titulo
+            </h6>
+            <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
+                        id="dropdownMenuButton-@Model.TareaId" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton-@Model.TareaId">
+                    <li>
+                        <a class="dropdown-item edit-btn" href="#" data-id="@Model.TareaId">
+                            <i class="bi bi-pencil me-2"></i>Editar
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item delete-btn" href="#" data-id="@Model.TareaId">
+                            <i class="bi bi-trash me-2"></i>Eliminar
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="card-text small text-muted mb-2">@Model.Descripcion</p>
+
+        <div class="d-flex justify-content-between align-items-center">
+            <span class="badge bg-light text-dark due-date" data-bs-toggle="tooltip" title="Fecha de vencimiento">
+                <i class="bi bi-calendar-event me-1"></i>
+                @Model.FechaVencimiento.ToString("dd MMM")
+            </span>
+
+            <div class="avatar-group">
+                <span class="avatar avatar-sm bg-primary text-white rounded-circle"
+                      data-bs-toggle="tooltip" title="Asignado a @Model.Usuario.NombreUsuario">
+                    @Model.Usuario.NombreUsuario.Substring(0, 1).ToUpper()
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

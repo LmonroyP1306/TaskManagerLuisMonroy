@@ -1,0 +1,47 @@
+﻿@model TaskManager.Models.Tarea
+
+<div class="modal-header bg-danger text-white">
+    <h5 class="modal-title"><i class="bi bi-exclamation-triangle me-2"></i>Confirmar Eliminación</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body bg-light">
+    <div class="alert alert-danger" role="alert">
+        <h6 class="alert-heading"><i class="bi bi-exclamation-octagon-fill me-2"></i>¿Estás seguro que deseas eliminar esta tarea?</h6>
+        <p class="mb-0">Esta acción no se puede deshacer.</p>
+    </div>
+
+    <div class="card border-danger mb-4">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">Detalles de la tarea</h6>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span><i class="bi bi-card-heading me-2"></i>Título:</span>
+                    <span class="fw-bold">@Model.Titulo</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <span><i class="bi bi-calendar-date me-2"></i>Fecha Vencimiento:</span>
+                    <span class="fw-bold">@Model.FechaVencimiento.ToString("dd MMM yyyy")</span>
+                </li>
+                <li class="list-group-item">
+                    <span><i class="bi bi-text-paragraph me-2"></i>Descripción:</span>
+                    <p class="mt-2">@Model.Descripcion</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("Delete", "Tareas", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.TareaId)
+
+        <div class="modal-footer bg-light">
+            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">
+                <i class="bi bi-x-circle me-2"></i>Cancelar
+            </button>
+            <button type="submit" class="btn btn-danger rounded-pill px-4">
+                <i class="bi bi-trash me-2"></i>Eliminar Definitivamente
+            </button>
+        </div>
+    }
+</div>

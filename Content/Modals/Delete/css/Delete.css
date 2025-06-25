@@ -1,0 +1,17 @@
+﻿/* Delete Modal */
+#deleteModal .modal-header {
+    background-color: #dc3545;
+    color: white;
+}
+
+#deleteModal .modal-title {
+    color: white;
+}
+
+#deleteModal .btn-close {
+    filter: invert(1);
+}
+
+#deleteModal .modal-body {
+    background-color: #fff5f5;
+}

@@ -1,0 +1,30 @@
+/Web.config
+/Web.config/
+/bin
+/obj
+/OLDWeb_config
+*/.vs
+.vs/
+/.vs
+.ionide/symbolCache.db
+
+# Archivos generados por compilaci�n
+bin/
+obj/
+
+# Paquetes NuGet
+/packages/
+/package/
+packages/
+
+# Archivos de usuario de Visual Studio
+*.user
+*.suo
+*.rsuser
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Configuraci�n de Visual Studio
+.vs/
