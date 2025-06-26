@@ -42,7 +42,7 @@
                     <i class="bi bi-hourglass"></i> Pendiente
                     <span class="badge bg-white text-dark ms-2">@Model.Count(t => t.Estado == "Pendiente")</span>
                 </h5>
-                <div class="tasks-list" id="pendiente-column">
+                <div class="tasks-list" id="Pendiente-column">
                     @foreach (var tarea in Model.Where(t => t.Estado == "Pendiente"))
                     {
                         @Html.Partial("_TaskCard", tarea)
@@ -58,7 +58,7 @@
                     <i class="bi bi-arrow-repeat"></i> En Progreso
                     <span class="badge bg-white text-dark ms-2">@Model.Count(t => t.Estado == "EnProgreso")</span>
                 </h5>
-                <div class="tasks-list" id="enprogreso-column">
+                <div class="tasks-list" id="EnProgreso-column">
                     @foreach (var tarea in Model.Where(t => t.Estado == "EnProgreso"))
                     {
                         @Html.Partial("_TaskCard", tarea)
@@ -74,7 +74,7 @@
                     <i class="bi bi-check-circle"></i> Completa
                     <span class="badge bg-white text-dark ms-2">@Model.Count(t => t.Estado == "Completa")</span>
                 </h5>
-                <div class="tasks-list" id="completa-column">
+                <div class="tasks-list" id="Completa-column">
                     @foreach (var tarea in Model.Where(t => t.Estado == "Completa"))
                     {
                         @Html.Partial("_TaskCard", tarea)
@@ -111,7 +111,8 @@
             function setupModal(modalId, loadUrl) {
                 const modalElement = document.getElementById(modalId);
                 const modal = new bootstrap.Modal(modalElement, {
-                    focus: true
+                    focus: true,
+                    backdrop: 'static'
                 });
 
                 // Limpiar modal al ocultar
@@ -121,18 +122,26 @@
 
                 return {
                     show: function() {
-                        $(modalElement).find('.modal-content').load(loadUrl, function() {
-                            modal.show();
-                            // Enfocar el primer elemento input
-                            $(this).find('input:first').trigger('focus');
+                        return new Promise((resolve) => {
+                            $(modalElement).find('.modal-content').load(loadUrl, function () {
+                                modal.show();
+                                $(this).find('input:first').trigger('focus');
+                                resolve();
+                            });
                         });
                     },
                     showWithId: function(id) {
                         const url = loadUrl + '/' + id;
-                        $(modalElement).find('.modal-content').load(url, function() {
-                            modal.show();
-                            $(this).find('input:first').trigger('focus');
+                        return new Promise((resolve) => {
+                            $(modalElement).find('.modal-content').load(url, function () {
+                                modal.show();
+                                $(this).find('input:first').trigger('focus');
+                                resolve();
+                            });
                         });
+                    },
+                    hide: function () {
+                        modal.hide();
                     }
                 };
             }
