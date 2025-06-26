@@ -92,7 +92,7 @@ EF Code First creará la base de datos automáticamente.
 ---
 ## 🗃️ Base de Datos
 
-Se incluye el archivo [`TaskManager_DB_Script.sql`](TaskManager/Database/TaskManager_DB_Script.sql) con la estructura y restricciones de la base de datos utilizadas en este proyecto.
+Se incluye el archivo [`TaskManager_DB_Script.sql`](TaskManager\TaskManagerLuisMonroy\Database\TaskManager_DB_Script.sql) con la estructura y restricciones de la base de datos utilizadas en este proyecto.
 
 ### Tablas incluidas:
 
@@ -112,19 +112,19 @@ Se incluye el archivo [`TaskManager_DB_Script.sql`](TaskManager/Database/TaskMan
 ## 🖼️ Capturas de pantalla
 
 ### 👨‍💻 Vista del Logging 
-![Loggin](TaskManagerLuisMonroy/Capturas/kanban-logging-view.png)
+![Loggin](TaskManager\TaskManagerLuisMonroy\Capturas\kanban-logging-view.png)
 
 ### 🟦 Vista general del tablero Kanban
-![Tablero Kanban](TaskManagerLuisMonroy/Capturas/kanban-view.png)
+![Tablero Kanban](TaskManager/TaskManagerLuisMonroy/Capturas/kanban-view.png)
 
 ### ✳️ Modal de creación de tarea
-![Modal Crear Tarea](TaskManagerLuisMonroy/Capturas/modal-crear.png)
+![Modal Crear Tarea](TaskManager/TaskManagerLuisMonroy/Capturas/modal-crear.png)
 
 ### 🎨 Modal de edición de tarea
-![Modal Crear Tarea](TaskManagerLuisMonroy/Capturas/modal-editar.png)
+![Modal Crear Tarea](TaskManager/TaskManagerLuisMonroy/Capturas/modal-editar.png)
 
 ### 🔴 Modal de eliminación de tarea
-![Modal Crear Tarea](TaskManagerLuisMonroy/Capturas/modal-eliminar.png)
+![Modal Crear Tarea](TaskManager/TaskManagerLuisMonroy/Capturas/modal-eliminar.png)
 
 ---
 ## 👨‍💻 Autor
