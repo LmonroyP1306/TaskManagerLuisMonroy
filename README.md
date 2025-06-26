@@ -92,7 +92,7 @@ EF Code First creará la base de datos automáticamente.
 ---
 ## 🗃️ Base de Datos
 
-Se incluye el archivo [`TaskManager_DB_Script.sql`](TaskManager\TaskManagerLuisMonroy\Database\TaskManager_DB_Script.sql) con la estructura y restricciones de la base de datos utilizadas en este proyecto.
+Se incluye el archivo [`TaskManager_DB_Script.sql`](Database\TaskManager_DB_Script.sql) con la estructura y restricciones de la base de datos utilizadas en este proyecto.
 
 ### Tablas incluidas:
 
