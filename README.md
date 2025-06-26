@@ -112,19 +112,19 @@ Se incluye el archivo [`TaskManager_DB_Script.sql`](TaskManager/Database/TaskMan
 ## 🖼️ Capturas de pantalla
 
 ### 👨‍💻 Vista del Logging 
-![Loggin](TaskManager/Capturas/kanban-logging-view.png)
+![Loggin](TaskManagerLuisMonroy/Capturas/kanban-logging-view.png)
 
 ### 🟦 Vista general del tablero Kanban
-![Tablero Kanban](TaskManager/Capturas/kanban-view.png)
+![Tablero Kanban](TaskManagerLuisMonroy/Capturas/kanban-view.png)
 
 ### ✳️ Modal de creación de tarea
-![Modal Crear Tarea](TaskManager/Capturas/modal-crear.png)
+![Modal Crear Tarea](TaskManagerLuisMonroy/Capturas/modal-crear.png)
 
 ### 🎨 Modal de edición de tarea
-![Modal Crear Tarea](TaskManager/Capturas/modal-editar.png)
+![Modal Crear Tarea](TaskManagerLuisMonroy/Capturas/modal-editar.png)
 
 ### 🔴 Modal de eliminación de tarea
-![Modal Crear Tarea](TaskManager/Capturas/modal-eliminar.png)
+![Modal Crear Tarea](TaskManagerLuisMonroy/Capturas/modal-eliminar.png)
 
 ---
 ## 👨‍💻 Autor
