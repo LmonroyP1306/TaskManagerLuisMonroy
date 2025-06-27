@@ -14,7 +14,6 @@ namespace TaskManagerLuisMonroy
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            System.Data.Entity.Database.SetInitializer(new TaskManager.Data.DbInitializer());
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
